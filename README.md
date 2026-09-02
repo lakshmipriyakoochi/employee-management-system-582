@@ -1,14 +1,15 @@
 Nexus EMS — Employee Management System
 
-Live app: https://employee-management-system-582.vercel.app Repository: https://github.com/lakshmipriyakoochi/employee-management-system-582
+Live app:
+https://employee-management-system-582.vercel.app 
+Repository: https://github.com/lakshmipriyakoochi/employee-management-system-582
 
 Nexus EMS is a single-page React application for managing an employee directory — tracking staff profiles, departments, salaries, and status, with a dashboard for high-level workforce analytics. All data is stored locally in the browser (no backend/database).
 
 1. User Guide
 1.1 Signing In
 
-The app opens on a login screen ("NEXUS EMS — Employee Management System Portal"). There is no real authentication backend — any email/password combination will log you in. Two one-click demo options are also provided:
-
+The app opens on a login screen ("NEXUS EMS — Employee Management System Portal"). 
 Button	Email	Role assigned
 System Admin	admin@company.com	System Administrator
 HR Manager	hr.manager@company.com	HR Manager
@@ -59,7 +60,7 @@ Joining Date	Defaults to today
 Fields marked * are required — the form will show inline validation errors if left blank or invalid. On successful save, a toast notification confirms the action ("Employee added", "Employee updated", or "Employee deleted").
 
 1.5 Data Persistence
-All employee records and your login session are saved in the browser's local storage — nothing is sent to a server.
+All employee records and your login session are saved in the browser's local storage .
 Data persists across page refreshes and browser restarts on the same device/browser, but does not sync across devices or browsers, and clearing browser data will reset it.
 On first load (or if local storage is empty), the app seeds itself with 8 sample employees across Engineering, Design, HR, Marketing, Finance, and Sales.
 2. Technical Documentation
@@ -105,7 +106,7 @@ employee-management-system-582/
         ├── localStorage.js      # Read/write helpers for persistence
         └── formatters.js        # Currency/date formatting helpers
 
-There is no routing library — App.jsx toggles between 'dashboard' and 'employees' tabs using local component state (activeTab), and conditionally renders LoginPage when not authenticated.
+
 
 2.3 Architecture Notes
 
@@ -165,12 +166,6 @@ npm run build	Production build to dist/
 npm run preview	Preview the production build locally
 2.6 Deployment
 
-The app is deployed on Vercel as a static Vite build — there is no server-side code or API routes, so it deploys as a pure static site (vite build output). Any static host (Vercel, Netlify, GitHub Pages) would work equally well since all "backend" behavior is simulated client-side with localStorage.
+The app is deployed on Vercel as a static Vite build  it deploys as a pure static site (vite build output). Any static host (Vercel, Netlify, GitHub Pages) would work equally well since all "backend" behavior is simulated client-side with localStorage.
 
-2.7 Known Limitations
-No real authentication — any credentials log you in; not suitable for production without a real auth backend.
-No multi-user/multi-device sync — data lives only in one browser's local storage.
-No server persistence — refreshing in a different browser or clearing site data loses all changes.
-No pagination — the employee list renders all records at once (fine for demo-scale data, not for large datasets).
 
-Documentation generated from the project source at commit main of lakshmipriyakoochi/employee-management-system-582.
